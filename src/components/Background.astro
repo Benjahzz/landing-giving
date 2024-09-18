@@ -1,0 +1,75 @@
+---
+import Sticker01 from "@/assets/images/sticker_01.webp";
+import Sticker02 from "@/assets/images/sticker_02.webp";
+import Sticker03 from "@/assets/images/sticker_03.webp";
+import Sticker04 from "@/assets/images/sticker_04.webp";
+import Sticker05 from "@/assets/images/sticker_05.webp";
+import Sticker06 from "@/assets/images/sticker_06.webp";
+import Sticker07 from "@/assets/images/sticker_07.webp";
+import Sticker08 from "@/assets/images/sticker_08.svg";
+import Sticker09 from "@/assets/images/sticker_09.svg";
+import { Image } from "astro:assets";
+---
+
+<div id="background" class="h-screen absolute top-0 left-0 w-full">
+  <Image
+    src={Sticker01}
+    alt="Sticker"
+    class="sticker absolute top-20 left-20 md:left-[18%] z-0 w-36 -rotate-12 sticker"
+  />
+  <Image
+    src={Sticker04}
+    alt="Sticker"
+    class="absolute top-10 right-20 md:right-[25%] z-0 w-36 -rotate-45 sticker"
+  />
+  <Image
+    src={Sticker05}
+    alt="Sticker"
+    class="absolute top-40 right-[10%] z-0 w-20 sticker"
+  />
+
+  <Image
+    src={Sticker08}
+    alt="Sticker"
+    class="absolute top-80 right-[22%] z-0 w-44 sticker"
+  />
+  <Image
+    src={Sticker06}
+    alt="Sticker"
+    class="absolute top-96 right-[13%] z-0 w-20 sticker"
+  />
+  <Image
+    src={Sticker07}
+    alt="Sticker"
+    class="absolute bottom-[15%] right-[25%] z-0 w-40 sticker"
+  />
+  <Image
+    src={Sticker09}
+    alt="Sticker"
+    class="absolute bottom-80 left-[2%] md:left-[15%] z-0 w-44 sticker"
+  />
+  <Image
+    src={Sticker02}
+    alt="Sticker"
+    class="absolute top-44 -left-24 z-0 w-48 sticker"
+  />
+</div>
+
+<script>
+  document.addEventListener("mousemove", (e) => {
+    gsap.utils.toArray(".sticker").forEach((sticker, index) => {
+      const depth = 400;
+      const moveX = (e.pageX - window.innerWidth / 2) / depth;
+      const moveY = (e.pageY - window.innerHeight / 2) / depth;
+      index++;
+
+      gsap.to(sticker as gsap.TweenTarget, {
+        x: moveX * index,
+        y: moveY * index,
+      });
+    });
+  });
+
+ 
+
+</script>

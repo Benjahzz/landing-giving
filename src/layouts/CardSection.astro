@@ -1,0 +1,78 @@
+---
+import CardImage0 from "@/assets/images-cards/card_0.svg";
+import CardImage01 from "@/assets/images-cards/card_01.png";
+import CardImage02 from "@/assets/images-cards/card_02.png";
+import CardImage03 from "@/assets/images-cards/card_03.svg";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { Image } from "astro:assets";
+---
+
+<section class="w-[90%] mx-auto">
+  <h2>Explore endless possibilities.</h2>
+  <div class="grid grid-cols-3 grid-rows-[repeat(3,300px)] gap-8">
+    <!-- Customization Card -->
+    <Card className="bg-[#C3B2E7] text-[#52225E] font-bold group row-span-2">
+      <CardHeader className="text-3xl">Customization</CardHeader>
+      <CardContent>
+        <Image
+          src={CardImage01}
+          alt="Card Image"
+          class="w-full group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-300"
+          width={1000}
+          height={1000}
+        />
+        <Card className="-ml-14 overflow-hidden">
+          <CardContent className="overflow-hidden gap-4 p-0">
+            <Image
+              src={CardImage0}
+              alt="Card Image"
+              class="w-[140%] max-w-none p-2 group-hover:-translate-x-40 transition-transform duration-300"
+            />
+          </CardContent>
+        </Card>
+      </CardContent>
+
+      <CardFooter>
+        Use a pre-designed template or personalize with video, stickers, fonts,
+        and more
+      </CardFooter>
+    </Card>
+    <!-- Scheduling Card -->
+    <Card className="bg-[#F682A5] col-start-2 col-end-4 row-span-1 group">
+      <CardContent className="flex h-full text-[#52225E] font-bold ">
+        <div class="self-end space-y-4">
+          <h2 class="text-3xl">Scheduling</h2>
+          <p>Schedule all your cards and gifts now and we’ll send them later</p>
+        </div>
+        <Image
+          src={CardImage02}
+          alt="Card Image"
+          class="object-contain -mt-20 group-hover:scale-110 group-hover:-rotate-2 transition-transform duration-300"
+        />
+      </CardContent>
+    </Card>
+    <!-- Wallet Card -->
+    <Card className="bg-[#CADA8F]">
+      <CardHeader className="-mt-24 p-0">
+        <Image src={CardImage03} alt="Card Image" class="w-full object-contain" />
+      </CardHeader>
+      <CardContent className="p-0">
+        <h2>Wallet</h2>
+        <p>Access all your gifts and save up your Givingli Cash</p>
+      </CardContent>
+      <CardFooter />
+    </Card>
+    <!-- Scheduling Card -->
+    <Card className="">
+      <CardHeader> Customization </CardHeader>
+      <CardContent>
+        <Image src={CardImage01} alt="Card Image" class="w-48" />
+      </CardContent>
+    </Card>
+  </div>
+</section>
